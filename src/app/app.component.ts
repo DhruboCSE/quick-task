@@ -2,7 +2,8 @@ import { Component, signal } from '@angular/core';
 import { HeaderComponent } from "./header/header.component";
 import { UserComponent } from "./user/user.component";
 import { TasksComponent } from './tasks/tasks.component';
-import { DUMMY_USERS, User } from './user/dummy-users';
+import { DUMMY_USERS } from './dummy-users';
+import { User } from './types';
 
 @Component({
   selector: 'app-root',
@@ -13,9 +14,9 @@ import { DUMMY_USERS, User } from './user/dummy-users';
 export class AppComponent {
   title = 'QuickTask';
   users = DUMMY_USERS;
-  selectedUser = signal(this.users[0]);
+  selectedUser?: User;
 
   onSelectedUser(user: User) {
-    this.selectedUser.set(user);
+    this.selectedUser = user;
   }
 }
