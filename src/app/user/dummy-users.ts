@@ -1,4 +1,12 @@
-export const DUMMY_USERS = [
+type User = {
+  id: string;
+  name: string;
+  avatar: string;
+};
+
+export type { User };
+
+export const DUMMY_USERS: User[] = [
     {
       id: 'u1',
       name: 'Jasmine Washington',

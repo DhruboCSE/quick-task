@@ -1,4 +1,5 @@
 import { Component, input, computed, output } from '@angular/core';
+import { User } from '../user/dummy-users';
 
 @Component({
   selector: 'app-user',
@@ -7,13 +8,13 @@ import { Component, input, computed, output } from '@angular/core';
   styleUrl: './user.component.css'
 })
 export class UserComponent {
-  id = input.required<string>();
-  avatar = input.required<string>();
-  name = input.required<string>();
-  select = output<string>();
+  user = input.required<User>();
+  select = output<User>();
 
-  avatarSrc = computed(() => 'assets/users/' + this.avatar());
+  avatarSrc = computed(() => 'assets/users/' + this.user().avatar);
+  name = computed(() => this.user().name);
+  
   onSelectedUser() {;
-    this.select.emit(this.id());
+    this.select.emit(this.user());
   }
 }
