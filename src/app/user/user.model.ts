@@ -1,6 +1,6 @@
 import { Task } from './../tasks/task/task.model';
 
-export type User = {
+export interface User{
   id: string;
   name: string;
   avatar: string;

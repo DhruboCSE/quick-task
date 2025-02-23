@@ -11,7 +11,7 @@ import { CardComponent } from "../shared/card/card.component";
 export class UserComponent {
   user = input.required<User>();
   select = output<User>();
-  selected = input.required<Boolean>();
+  selected = input.required<boolean>();
 
   avatarSrc = computed(() => 'assets/users/' + this.user().avatar);
   name = computed(() => this.user().name);
