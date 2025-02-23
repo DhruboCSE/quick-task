@@ -1,8 +1,8 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HeaderComponent } from "./header/header.component";
 import { UserComponent } from "./user/user.component";
 import { TasksComponent } from './tasks/tasks.component';
-import { DUMMY_USERS } from './user/dummy-users';
+import { UserService } from './user/user.service';
 import { User } from './user/user.model';
 
 @Component({
@@ -12,9 +12,14 @@ import { User } from './user/user.model';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  // constructor(private userService: UserService) {}
+  private userService= inject(UserService)
+
   title = 'QuickTask';
-  users = DUMMY_USERS;
   selectedUser?: User;
+  get users() {
+    return this.userService.getUsers();
+  }
 
   onSelectedUser(user: User) {
     this.selectedUser = user;

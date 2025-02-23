@@ -11,14 +11,14 @@ import { v4 as uuidv4 } from 'uuid';
   styleUrl: './new-task.component.css',
 })
 export class NewTaskComponent {
-  cancelAddingTask = output();
+  closeAddTaskDialog = output();
   newTask = output<Task>();
   title = signal('');
   summary = signal('');
   date = signal('');
 
-  onCancel() {
-    this.cancelAddingTask.emit();
+  close() {
+    this.closeAddTaskDialog.emit();
   }
   onSubmit() {
     this.newTask.emit({
