@@ -15,6 +15,7 @@ describe('UserComponent', () => {
     fixture = TestBed.createComponent(UserComponent);
     component = fixture.componentInstance;
     fixture.componentRef.setInput('user', { id: 'test-id', name: 'foo', avatar: 'bar.jpg' });
+    fixture.componentRef.setInput('selected', false);
     fixture.detectChanges();
   });
 
