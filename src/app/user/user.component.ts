@@ -10,6 +10,7 @@ import { User } from './user.model';
 export class UserComponent {
   user = input.required<User>();
   select = output<User>();
+  selected = input.required<Boolean>();
 
   avatarSrc = computed(() => 'assets/users/' + this.user().avatar);
   name = computed(() => this.user().name);
