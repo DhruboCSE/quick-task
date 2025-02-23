@@ -1,9 +1,11 @@
-<article>
+<app-card>
+  <article>
     <h2>{{ task().title }}</h2>
     <time>Due: {{ task().dueDate.toUTCString() }}</time>
     <p>{{ task().summary }}</p>
     <p class="actions">
-        <button (click)="onCompleted()">Completed</button>
+      <button (click)="onCompleted()">Completed</button>
     </p>
     <h1>Is {{ task().completed }}</h1>
-</article>
+  </article>
+</app-card>
