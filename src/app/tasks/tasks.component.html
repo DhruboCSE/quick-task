@@ -1,3 +1,6 @@
+@if (isAddindTask) {
+  <app-new-task (cancelAddingTask)="closeAddTaskDialog()" (newTask)="addNewTask($event)"/>
+}
 <section id="tasks">
   <header>
     <h2>{{ user().name }} 's Task</h2>
